@@ -1,0 +1,2 @@
+import {dbRpc,handleError,json,requireAdmin,requirePost} from '../_lib/server.js';
+export default async function handler(req,res){if(!requirePost(req,res)||!requireAdmin(req,res))return;try{const ganador=await dbRpc('sortear_participante');if(!ganador)return json(res,409,{error:'No quedan participantes disponibles para sortear.'});return json(res,200,{ganador});}catch(error){return handleError(res,error);}}

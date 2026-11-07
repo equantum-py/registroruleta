@@ -1,0 +1,2 @@
+import {dbRpc,handleError,json,requireAdmin,requirePost} from '../_lib/server.js';
+export default async function handler(req,res){if(!requirePost(req,res)||!requireAdmin(req,res))return;if(req.body?.confirmacion!=='REINICIAR')return json(res,400,{error:'Confirmación inválida.'});try{await dbRpc('reiniciar_sorteo');return json(res,200,{ok:true});}catch(error){return handleError(res,error);}}

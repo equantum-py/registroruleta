@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#102957"/>
+<meta name="description" content="Registrate para participar de la dinámica bíblica y la ruleta de versículos."/>
+<title>Dinámica bíblica | Registro</title>
+<link rel="stylesheet" href="styles.css"/><script src="app.js" defer></script>
+</head>
+<body class="page-registration">
+<main class="registration-wrap">
+<div class="brand"><span class="brand-symbol">✦</span> DINÁMICA BÍBLICA</div>
+<section class="registration-card" aria-labelledby="register-title">
+<p class="eyebrow">PARTICIPÁ DE LA DINÁMICA</p>
+<h1 id="register-title">¡Tu nombre puede salir en la ruleta!</h1>
+<p class="intro">Registrate y preparate para compartir un versículo bíblico si resultás elegido.</p>
+<form id="registration-form" novalidate>
+<label for="nombre">Nombre</label>
+<input id="nombre" name="nombre" type="text" autocomplete="given-name" maxlength="60" minlength="2" required placeholder="Tu nombre"/>
+<label for="apellido">Apellido</label>
+<input id="apellido" name="apellido" type="text" autocomplete="family-name" maxlength="60" minlength="2" required placeholder="Tu apellido"/>
+<label for="iglesia">Iglesia</label>
+<input id="iglesia" name="iglesia" type="text" autocomplete="organization" maxlength="100" minlength="2" required placeholder="Nombre de tu iglesia"/>
+<div class="trap" aria-hidden="true"><label for="contacto">Contacto</label><input id="contacto" name="contacto" type="text" tabindex="-1" autocomplete="off"/></div>
+<button class="primary-button" id="registration-button" type="submit">¡Quiero participar! <span aria-hidden="true">→</span></button>
+<p class="form-status" id="registration-status" role="status" aria-live="polite"></p>
+</form>
+<div id="registration-success" class="success-panel hidden" role="status" aria-live="polite">
+<div class="success-icon">✓</div><h2>¡Ya estás participando!</h2>
+<p>Tu nombre fue agregado a la ruleta. Prestá atención al sorteo.</p>
+</div>
+</section>
+<p class="page-footer">Una dinámica para compartir la Palabra de Dios.</p>
+</main>
+</body>
+</html>

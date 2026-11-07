@@ -1,0 +1,2 @@
+import {dbRpc,handleError,json,requireAdmin} from '../_lib/server.js';
+export default async function handler(req,res){if(req.method!=='GET')return json(res,405,{error:'Método no permitido.'});if(!requireAdmin(req,res))return;try{const participantes=await dbRpc('listar_participantes');return json(res,200,{participantes:participantes||[]});}catch(error){return handleError(res,error);}}

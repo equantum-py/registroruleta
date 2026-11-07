@@ -1,0 +1,2 @@
+import {clearSessionCookie,json,requirePost} from '../_lib/server.js';
+export default function handler(req,res){if(!requirePost(req,res))return;res.setHeader('Set-Cookie',clearSessionCookie(req));return json(res,200,{ok:true});}

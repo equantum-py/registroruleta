@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#102957"/>
+<title>Dinámica bíblica | Ruleta</title>
+<link rel="stylesheet" href="styles.css"/><script src="ruleta.js" defer></script>
+</head>
+<body class="page-wheel">
+<main>
+<header class="wheel-header">
+<div class="brand"><span class="brand-symbol">✦</span> DINÁMICA BÍBLICA</div>
+<div class="wheel-header-actions"><a href="/" target="_blank" rel="noopener">Abrir registro ↗</a><button type="button" id="logout" class="quiet-button hidden">Salir</button></div>
+</header>
+<section id="login-panel" class="login-card">
+<p class="eyebrow">CONTROL DEL SORTEO</p>
+<h1>Acceso del organizador</h1>
+<p class="intro">Ingresá la contraseña para ver los participantes y manejar la ruleta.</p>
+<form id="login-form">
+<label for="password">Contraseña</label>
+<input id="password" type="password" autocomplete="current-password" required placeholder="Contraseña de administrador"/>
+<button class="primary-button" type="submit">Ingresar</button>
+<p id="login-status" class="form-status" role="status"></p>
+</form>
+</section>
+<section id="wheel-panel" class="wheel-layout hidden" aria-labelledby="wheel-title">
+<div class="wheel-main">
+<p class="eyebrow">MOMENTO DEL SORTEO</p>
+<h1 id="wheel-title">¿A quién le toca el versículo?</h1>
+<p class="wheel-subtitle">¡Que la ruleta elija al próximo participante!</p>
+<div class="wheel-frame"><canvas id="wheel-canvas" width="720" height="720" role="img" aria-label="Ruleta con nombres de participantes disponibles"></canvas><div class="wheel-pointer" aria-hidden="true"></div></div>
+<button class="primary-button spin-button" id="spin" type="button" disabled>GIRAR RULETA <span aria-hidden="true">✦</span></button>
+<p id="wheel-status" class="wheel-status" role="status" aria-live="polite"></p>
+<div id="winner-panel" class="winner-panel hidden" role="status" aria-live="polite">
+<span>¡PERSONA ELEGIDA!</span><h2 id="winner-name"></h2><p id="winner-church"></p>
+<strong>¡Es tu turno de decir un versículo bíblico!</strong>
+</div>
+</div>
+<aside class="sidebar" aria-label="Control de participantes">
+<div class="count-grid"><div><strong id="total-count">0</strong><span>Registrados</span></div>
+<div><strong id="pending-count">0</strong><span>Disponibles</span></div>
+<div><strong id="picked-count">0</strong><span>Elegidos</span></div></div>
+<div class="sidebar-section-header"><h2>Participantes</h2><button class="quiet-button" id="refresh" type="button">Actualizar ↻</button></div>
+<p class="sidebar-description">Los registros nuevos aparecen automáticamente.</p>
+<ul id="participants" class="participants-list"></ul>
+<button type="button" class="reset-button" id="reset">Reiniciar participantes elegibles</button>
+<p class="reset-note">Reinicia los resultados, sin borrar los registros.</p>
+</aside></section></main></body></html>
